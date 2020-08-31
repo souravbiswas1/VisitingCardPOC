@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "5ba2fba1-744d-4531-ad37-b48ce3b50ffe",
+		"name": "Visiting Card POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Extract-Ocr",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://cfce738b.ngrok.io/aiml/poc/getExtractOcr?url=https://visitingcardpoc-dev.s3.ap-south-1.amazonaws.com/images/visiting-card-500x500.png",
+					"protocol": "http",
+					"host": [
+						"cfce738b",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"aiml",
+						"poc",
+						"getExtractOcr"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://visitingcardpoc-dev.s3.ap-south-1.amazonaws.com/images/visiting-card-500x500.png"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Extract-text",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://cfce738b.ngrok.io/aiml/poc/getExtractImg?url=https://visitingcardpoc-dev.s3.ap-south-1.amazonaws.com/images/visiting-card-500x500.png",
+					"protocol": "http",
+					"host": [
+						"cfce738b",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"aiml",
+						"poc",
+						"getExtractImg"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://visitingcardpoc-dev.s3.ap-south-1.amazonaws.com/images/visiting-card-500x500.png"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transcribe-Audio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "job",
+							"value": "job_1_24072019",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "https://visitingcardpoc-dev.s3.ap-south-1.amazonaws.com/audio/poc_recording.mp3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://cfce738b.ngrok.io/aiml/poc/getTranscribe",
+					"protocol": "http",
+					"host": [
+						"cfce738b",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"aiml",
+						"poc",
+						"getTranscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload-Img",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image_path",
+							"value": "D:\\Zencode\\pix.png",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://47c1399b.ngrok.io/aiml/poc/getUploadImg",
+					"protocol": "http",
+					"host": [
+						"47c1399b",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"aiml",
+						"poc",
+						"getUploadImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Extract-text-s3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://47c1399b.ngrok.io/aiml/poc/getExtractImgS3?image_name=analytics.jpg",
+					"protocol": "http",
+					"host": [
+						"47c1399b",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"aiml",
+						"poc",
+						"getExtractImgS3"
+					],
+					"query": [
+						{
+							"key": "image_name",
+							"value": "analytics.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
